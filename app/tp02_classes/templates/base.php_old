@@ -1,0 +1,63 @@
+<?php
+declare(strict_types=1);
+require './templates/view_interns_list.php';
+require './model/intern.php';
+include_once './templates/intern_class.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP - TP object - classes</title>
+  <link rel="stylesheet" href="./design/default.css" title="Default CSS">
+  <link rel="icon" type="image/png" href="./design/will_o_the_wisp.png">
+</head>
+<body>
+
+<header>
+  <h2>Print a simple array in procedural</h2>
+</header>
+
+<main>
+<article id="interns">
+  <?php
+  var_dump($interns);
+  echo '<br><br>';
+  print_r($interns);
+  print_all_array_item($interns);
+  echo '<p>Second intern\'s first name: <strong>'.$interns[1]['fname'].'</strong></p>';
+  ?>
+</article>
+
+<article id="interns-class">
+  <?php
+  $eleanor = new Intern();
+  $eleanor->fname = 'Eleanor';
+  $eleanor->lname = 'of Aquitain';
+
+  $seneca = new Intern();
+  $seneca->fname = 'Lucius Anaeus';
+  $seneca->lname = 'seneca';
+  $interns =  new ArrayObject([$seneca,$eleanor]);
+  // $interns->append($eleanor);
+
+print_all_object_arr($interns);
+echo "toto";
+echo '<p>'.$interns->offsetGet(1).'</p>';
+echo '<p>'.$interns[1]->fname.'</p>';
+
+echo '<p>'.$interns[1]->greetings().'</p>';
+
+foreach ($interns as $intern) {
+    ?>
+    <p><?=$intern->greetings()?></p>
+    <?php
+}
+  ?>
+</article>
+</main>
+
+</body>
+</html>
