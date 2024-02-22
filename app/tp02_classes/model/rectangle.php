@@ -19,8 +19,12 @@ class Rectangle {
     return $this->width * $this->length;
   }
 
-  public function is_lozenge(): bool {
-    return $this->width == $this->length;
+  public function is_lozenge(): string {
+    if ($this->width == $this->length) {
+      return "It is a lozenge.";
+    } else {
+      return "It is not a lozenge.";
+    }
   }
 }
 ?>

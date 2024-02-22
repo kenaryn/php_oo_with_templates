@@ -27,9 +27,9 @@ function print_object_interns() {
   $seneca->fname = 'Lucius Anaeus';
   $seneca->lname = 'seneca';
   $interns =  new ArrayObject([$seneca, $eleanor]);
-  
-  include './templates/view_objects_interns.php';
   ob_start();
+  include './templates/view_object_interns.php';
+
   $contents = ob_get_contents();
   ob_end_clean();
   include_once './templates/base.php';
@@ -37,4 +37,11 @@ function print_object_interns() {
 
 function print_rect_calculations() {
   $rec1 = new Rectangle(3.5, 5.1);
+  $rec2 = new Rectangle(4.5, 4.5);
+  ob_start();
+  include './templates/view_rectangle.php';
+ 
+  $contents = ob_get_contents();
+  ob_end_clean();
+  include_once './templates/base.php';
 }
