@@ -8,6 +8,6 @@
   <link rel="icon" type="image/png" href="./design/will_o_the_wisp.png">
 </head>
 <body>
- <?=$content?>
+ <?=$contents?>
 </body>
 </html>
