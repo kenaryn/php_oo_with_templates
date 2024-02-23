@@ -1,0 +1,20 @@
+{
+    "name": "aurele/rpg",
+    "description": "RPG character creation and combat program",
+    "type": "project",
+    "license": "ISC",
+    "autoload": {
+        "psr-4": {
+            "Adventures\\": "model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aurele",
+            "email": "aurelien.plazzotta@tutanota.com"
+        }
+    ],
+    "require":{
+        "curl/curl": "^1.1"
+    }
+}
