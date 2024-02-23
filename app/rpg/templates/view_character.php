@@ -1,4 +1,6 @@
 <?php declare(strict_types=1); ?>
 
-<?=$princess->greet("Greetings!")?>
-<?php print_r($princess); ?>
+<article id="news">
+  <p><?=$princess->greet("Greetings!")?></p>
+  <p><?php print_r($princess); ?></p>
+</article>
