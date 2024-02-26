@@ -3,4 +3,6 @@
 <article id="news">
   <p><?=$princess->greet("Greetings!")?></p>
   <p><?php print_r($princess); ?></p>
+  <p><?php var_dump($princess); ?></p>
+  <p><?php foo($philosopher); ?></p>
 </article>

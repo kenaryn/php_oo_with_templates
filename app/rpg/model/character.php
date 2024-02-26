@@ -10,6 +10,22 @@ class Character {
     $this->_lname = $lname;
   }
 
+  public function __destruct()
+  {
+    echo 'The instance has just been destroyed.';
+  }
+
+  public function __debugInfo(): array
+  {
+    return ['fname'=> $this->_fname, 'lname'=> $this->_lname];
+  }
+
+  public function __call(string $funcName, array $args): void
+  {
+    echo 'The method ' . $funcName . ' has been called with the following parameters: ' . PHP_EOL;
+    print_r($args);
+  }
+
   public function getFname(): string {
     return $this->_fname;
   }
